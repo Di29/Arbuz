@@ -1,0 +1,2 @@
+C:\Users\УринбасаровД\source\repos\Arbuz\Arbuz\obj\Debug\Arbuz.csprojAssemblyReference.cache
+C:\Users\УринбасаровД\source\repos\Arbuz\Arbuz\obj\Debug\Arbuz.csproj.CoreCompileInputs.cache
