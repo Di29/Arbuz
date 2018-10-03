@@ -56,7 +56,7 @@ namespace Arbuz
             WriteLine("Введите Ваш логин: ");
             Login = ReadLine();
             WriteLine("Введите пароль: ");
-            Password = ReadLine();
+            Password = ReadPassword();
             Write("Введите номер телефона:+7 ");
             PhoneNumber = ReadLine();
 
@@ -73,6 +73,34 @@ namespace Arbuz
             }
             else
                 WriteLine("Верификация прошла успешно");
+        }
+
+        public string ReadPassword()
+        {
+            string password = "";
+            ConsoleKeyInfo info = ReadKey(true);
+            while (info.Key != ConsoleKey.Enter)
+            {
+                if (info.Key != ConsoleKey.Backspace)
+                {
+                    Write("*");
+                    password += info.KeyChar;
+                }
+                else if (info.Key == ConsoleKey.Backspace)
+                {
+                    if (!string.IsNullOrEmpty(password))
+                    {
+                        password = password.Substring(0, password.Length - 1);
+                        int pos = CursorLeft;
+                        SetCursorPosition(pos - 1, CursorTop);
+                        Write(" ");
+                        SetCursorPosition(pos - 1, CursorTop);
+                    }
+                }
+                info = ReadKey(true);
+            }
+            WriteLine();
+            return password;
         }
 
         public bool LogIn(List<User> userL, User user)
