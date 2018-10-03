@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Goods;
 
 namespace Arbuz
 {
     class Program
     {
-        static public int FirstPage()
+        static int FirstPage()
         {
             Console.Clear();
             Console.WriteLine("1. Регистрация \n2. Вход");
+
+            string menu = Console.ReadLine();
+            return Convert.ToInt32(menu);
+        }
+
+        static int MainPage()
+        {
+            Console.Clear();
+            Console.WriteLine("1. Купить товар \n2. Корзина \n3. Покупки \n0. Выход");
 
             string menu = Console.ReadLine();
             return Convert.ToInt32(menu);
@@ -24,6 +32,7 @@ namespace Arbuz
             User user = new User();
 
             int firstPageInput = 0;
+            int mainPageInput = 0;
             ConsoleKeyInfo input;
 
             do
@@ -40,49 +49,45 @@ namespace Arbuz
                     case (2):
                         if (user.LogIn(UserList, user))
                         {
-
+                            mainPageInput = MainPage();
+                            MainPageSwitch();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Логин или пароль введены не правильно");
+                            Console.ReadLine();             
                         }
 
                         break;
 
                 }
             } while (input.Key != ConsoleKey.Escape);
-            
-            
 
-
-
-        }
-
-        void MainPageSwitch()
-        {
-            AnimalGood animalGood = new AnimalGood();
-            Beverage beverage = new Beverage();
-            ChildrenGood childrenGood = new ChildrenGood();
-            Housing housing = new Housing();
-            Present present = new Present();
-            Product product = new Product();
-
-            int mainPageInput = 0;
-            do
+            void MainPageSwitch()
             {
-                switch (mainPageInput)
+                List<Product> productList = new List<Product>();
+                Product product = new Product();
+
+                do
                 {
-                    case (1):
+                    switch (mainPageInput)
+                    {
+                        case (1):
+                            Console.WriteLine("1. Подарки \n2.Продукты \n3. Детские товары \n4. Напитки \n5. Все для дома \n6Товары для животных");
+                            break;
+
+                    }
 
                 }
-
-            }
+                while (mainPageInput != 9);
         }
 
-
-        int MainPage()
-        {
-            Console.Clear();
-            Console.WriteLine("1. Купить товар \n2. Корзина \n3. Покупки");
-
-            string menu = Console.ReadLine();
-            return Convert.ToInt32(menu);
         }
+
+        
+
+
+
+        
     }
 }

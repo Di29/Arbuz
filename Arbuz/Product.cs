@@ -27,25 +27,23 @@ namespace Arbuz
         //    return random.Next(minNum, maxNum);
         //}
 
-        public string Category { get; set; }
+        //public string Category { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }
 
         public Product()
         {
-            Category = null;
+            //Category = null;
             Name = null;
             Price = 0;
         }
 
-        public Product(string category, string name, int price)
+        public Product(/*string category,*/ string name, int price)
         {
-            Category = category;
+           // Category = category;
             Name = name;
             Price = price;
         }
-
-        //List<Dictionary<string, List<String>>> list = new List<Dictionary<string, List<String>>>();
 
     }
 }
