@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arbuz", "Arbuz\Arbuz.csproj", "{5465CB04-4184-49DA-91C5-C803181FA726}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goods", "Goods\Goods.csproj", "{F4067744-4FF6-4BD5-9FE7-BF9D18B50A10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5465CB04-4184-49DA-91C5-C803181FA726}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5465CB04-4184-49DA-91C5-C803181FA726}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5465CB04-4184-49DA-91C5-C803181FA726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4067744-4FF6-4BD5-9FE7-BF9D18B50A10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4067744-4FF6-4BD5-9FE7-BF9D18B50A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4067744-4FF6-4BD5-9FE7-BF9D18B50A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4067744-4FF6-4BD5-9FE7-BF9D18B50A10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -27,13 +27,14 @@ namespace Arbuz
         int userCode = 0;
         Random random = new Random();
 
-        public User(string fName, string lName, string login, string password, Wallet purse)
+        public User(string fName, string lName, string login, string password, string phoneNum, Wallet purse)
         {
             FirstName = fName;
             LastName = lName;
             Login = login;
             Password = password;
             wallet = purse;
+            PhoneNumber = phoneNum;
         }
 
         public User()
@@ -42,6 +43,7 @@ namespace Arbuz
             LastName = null;
             Login = null;
             Password = null;
+            PhoneNumber = null;
             wallet = null;
         }
 

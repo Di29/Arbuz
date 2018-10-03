@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Goods;
 
 namespace Arbuz
 {
@@ -11,19 +12,10 @@ namespace Arbuz
         static public int FirstPage()
         {
             Console.Clear();
-            Console.WriteLine(@"
-                    1. Регистрация
-                    2. Вход");
+            Console.WriteLine("1. Регистрация \n2. Вход");
 
             string menu = Console.ReadLine();
             return Convert.ToInt32(menu);
-        }
-
-        static public int MainPage()
-        {
-            Console.Clear();
-            Console.WriteLine(@"
-                    1")
         }
 
         static void Main(string[] args)
@@ -31,14 +23,14 @@ namespace Arbuz
             List<User> UserList = new List<User>();
             User user = new User();
 
-            int fPageInput = 0;
+            int firstPageInput = 0;
             ConsoleKeyInfo input;
 
             do
             {
+                firstPageInput = FirstPage();
                 input = Console.ReadKey(true);
-                fPageInput = FirstPage();
-                switch (fPageInput)
+                switch (firstPageInput)
                 {
                     case (1):
                         user.UserRegistration();
@@ -56,8 +48,41 @@ namespace Arbuz
                 }
             } while (input.Key != ConsoleKey.Escape);
             
+            
 
 
+
+        }
+
+        void MainPageSwitch()
+        {
+            AnimalGood animalGood = new AnimalGood();
+            Beverage beverage = new Beverage();
+            ChildrenGood childrenGood = new ChildrenGood();
+            Housing housing = new Housing();
+            Present present = new Present();
+            Product product = new Product();
+
+            int mainPageInput = 0;
+            do
+            {
+                switch (mainPageInput)
+                {
+                    case (1):
+
+                }
+
+            }
+        }
+
+
+        int MainPage()
+        {
+            Console.Clear();
+            Console.WriteLine("1. Купить товар \n2. Корзина \n3. Покупки");
+
+            string menu = Console.ReadLine();
+            return Convert.ToInt32(menu);
         }
     }
 }
