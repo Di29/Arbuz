@@ -33,12 +33,13 @@ namespace Arbuz
 
             int firstPageInput = 0;
             int mainPageInput = 0;
-            ConsoleKeyInfo input;
+            ConsoleKeyInfo inputFirst;
+            ConsoleKeyInfo inputMain;
 
             do
             {
                 firstPageInput = FirstPage();
-                input = Console.ReadKey(true);
+                inputFirst = Console.ReadKey(true);
                 switch (firstPageInput)
                 {
                     case (1):
@@ -51,43 +52,56 @@ namespace Arbuz
                         {
                             mainPageInput = MainPage();
                             MainPageSwitch();
+                            
                         }
                         else
                         {
                             Console.WriteLine("Логин или пароль введены не правильно");
-                            Console.ReadLine();             
+                            Console.ReadLine();
                         }
 
                         break;
 
                 }
-            } while (input.Key != ConsoleKey.Escape);
+            } while (inputFirst.Key != ConsoleKey.Escape);
 
             void MainPageSwitch()
             {
-                List<Product> productList = new List<Product>();
-                Product product = new Product();
+                Product product;
+                List<Product> listOfSection = new List<Product>();
+                listOfSection.Add(product = new Product { Section = "1. Подарки" });
+                listOfSection.Add(product = new Product { Section = "2. Продукты" });
+                listOfSection.Add(product = new Product { Section = "3. Детские товары" });
+                listOfSection.Add(product = new Product { Section = "4. Напитки" });
+                listOfSection.Add(product = new Product { Section = "5. Все для дома" });
+                listOfSection.Add(product = new Product { Section = "6. Товары для животных" });
+                //Product product;
 
                 do
                 {
+                    inputFirst = Console.ReadKey(true);
+                    inputMain = Console.ReadKey(true);
                     switch (mainPageInput)
                     {
                         case (1):
-                            Console.WriteLine("1. Подарки \n2.Продукты \n3. Детские товары \n4. Напитки \n5. Все для дома \n6Товары для животных");
+                            Console.Clear();
+                            foreach (var item in listOfSection)
+                            {
+                                Console.WriteLine(item.Section);         
+                            }
+                            Console.WriteLine("Назад (Q)");
+                            if(inputMain.Key == ConsoleKey.Q)
+                            {
+                                break;
+                            }
                             break;
 
                     }
 
                 }
-                while (mainPageInput != 9);
-        }
+                while (inputFirst.Key != ConsoleKey.Escape);
+            }
 
         }
-
-        
-
-
-
-        
     }
 }

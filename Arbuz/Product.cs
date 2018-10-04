@@ -27,20 +27,26 @@ namespace Arbuz
         //    return random.Next(minNum, maxNum);
         //}
 
-        //public string Category { get; set; }
+        public string Section { get; set; } 
+        public string Category { get; set; }
+        public string Subcategory { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }
 
         public Product()
         {
-            //Category = null;
+            Section = null;
+            Category = null;
+            Subcategory = null;
             Name = null;
             Price = 0;
         }
 
-        public Product(/*string category,*/ string name, int price)
+        public Product(string section, string category,string subcategory, string name, int price)
         {
-           // Category = category;
+            Section = section;
+            Category = category;
+            Subcategory = subcategory;
             Name = name;
             Price = price;
         }
