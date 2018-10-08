@@ -92,7 +92,7 @@ namespace Arbuz
                             Console.WriteLine("Назад (Q)");
                             if(inputMain.Key == ConsoleKey.Q)
                             {
-                                break;
+                                
                             }
                             break;
 
